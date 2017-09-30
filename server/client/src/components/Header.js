@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Payments from './Payments';
 
 class Header extends Component {
 
   renderContent() {
     const { auth } = this.props;
     return auth
-      ? <li><a href="/api/logout">Logout</a></li>
+      ? <div>
+        <li><a href="/api/logout">Logout</a></li>
+        <li><Payments /></li>
+        </div>
       : <li><a href="/auth/google">Login</a></li>
   }
 
