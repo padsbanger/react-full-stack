@@ -6,9 +6,11 @@ class Header extends Component {
 
   renderContent() {
     const { auth } = this.props;
+    console.log(auth)
     return auth
       ? <div>
         <li><a href="/api/logout">Logout</a></li>
+        <li>Credits: {auth.credits}</li>
         <li><Payments /></li>
         </div>
       : <li><a href="/auth/google">Login</a></li>
